@@ -165,7 +165,7 @@ h2 {
 }
 
 .wrapper .gallery-container {
-    background: #f0f0f0;
+    background: linear-gradient(to bottom, #f0f0f0, #ffffff);
     border-radius: 0.5rem;
     padding: 1rem;
     margin: 2rem 0;
@@ -188,24 +188,13 @@ h2 {
 }
 
 .gallery-container ul.mosaic-gallery {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 -0.5rem;
+    columns: 12vw;
+    column-gap: 1vw;
 }
 
 .gallery-container ul.mosaic-gallery li {
-    background-position: center center;
-    background-size: cover;
-    flex: auto;
-    height: 25vw;
-    margin: 0 0.5rem 1rem;
-    max-height: 20rem;
-    border-radius: 0.2rem;
-}
-
-.gallery-container ul.mosaic-gallery li img {
-    height: 100%;
-    opacity: 0;
+    break-inside: avoid;
+    margin: 0 0 1vw;
 }
 
 /* About Section */
