@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    fetch('/assets/images.txt')
+    fetch('../assets/images.txt')
         .then(response => response.text())
         .then(text => {
             const data = { images: text.split(', ') };
