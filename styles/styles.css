@@ -113,8 +113,8 @@ nav ul li a:hover {
 /* Hero Section */
 #hero {
     height: 100vh;
-    background: url('https://lh3.googleusercontent.com/d/1syMxxLmVqMNCRAsHyCmpmfbf4Y6fnAOj') no-repeat center center/cover;
-    background-position: center 50%;
+    background: url('https://lh3.googleusercontent.com/d/148aX15U9nbRL6S9OpGUI3Jc70XvGjzUa') no-repeat center center/cover;
+    background-position: center 51%;
     display: flex;
     background-size: cover;
     text-shadow: 2px 2px 8px #000;
@@ -195,6 +195,12 @@ h2 {
 .gallery-container ul.mosaic-gallery li {
     break-inside: avoid;
     margin: 0 0 1vw;
+}
+
+@media (max-width: 768px) {
+    .gallery-container ul.mosaic-gallery {
+        columns: 2;
+    }
 }
 
 /* About Section */
@@ -400,9 +406,8 @@ footer p {
         opacity: 1;
     }
 
-    .navbar-nav li {
+    .navbar-nav li a {
         text-align: center;
-        width: 100%;
     }
 }
 
