@@ -1,0 +1,450 @@
+/* styles.css */
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.montserrat-heading {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700; /* Bold for headings */
+    font-style: normal;
+}
+
+.montserrat-body {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400; /* Normal weight for body text */
+    font-style: normal;
+}
+
+nav,
+footer,
+button,
+input,
+textarea {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+}
+
+.hero-content h1,
+#portfolio h2,
+#about h2,
+#services h2,
+#testimonials h2,
+#contact h2 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+}
+
+.hero-content p,
+.about-content p,
+.service-item p,
+.testimonial-item p,
+.contact-info p {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+}
+
+.montserrat-body {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400; /* For regular body text */
+    font-style: normal;
+}
+
+
+body {
+    font-size: 16px;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+/* Navigation Bar */
+nav {
+    position: fixed;
+    width: 100%;
+    background: #333;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: background 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    background: #555;
+}
+
+/* Logo Style */
+.logo {
+    color: white; /* Change the color to white or any suitable color */
+    text-decoration: none; /* Remove underline */
+    font-size: 1.5rem; /* Adjust size as needed */
+    font-weight: bold; /* Make it bold */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.logo:hover {
+    color: #ccc; /* Lighter shade on hover */
+}
+
+.logo:focus {
+    outline: none; /* Remove focus outline */
+}
+
+/* Hero Section */
+#hero {
+    height: 100vh;
+    background: url('https://lh3.googleusercontent.com/d/1syMxxLmVqMNCRAsHyCmpmfbf4Y6fnAOj') no-repeat center center/cover;
+    background-position: center 50%;
+    display: flex;
+    background-size: cover;
+    text-shadow: 2px 2px 8px #000;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+}
+
+/* Portfolio Section Styles */
+#portfolio {
+    padding: 60px 20px;
+    background: #fff;
+    text-align: center;
+}
+
+#portfolio h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.wrapper {
+    margin: 0 auto;
+    max-width: 85rem;
+    padding: 2rem;
+    text-align: center;
+}
+
+.wrapper p {
+    color: #eaf2ef;
+}
+
+.wrapper .gallery-container {
+    background: #f0f0f0;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin: 2rem 0;
+}
+
+.wrapper .gallery-container h2 {
+    color: #333;
+}
+
+.wrapper .gallery-container ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper .gallery-container ul li img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+.gallery-container ul.mosaic-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -0.5rem;
+}
+
+.gallery-container ul.mosaic-gallery li {
+    background-position: center center;
+    background-size: cover;
+    flex: auto;
+    height: 15vw;
+    margin: 0 0.5rem 1rem;
+    max-height: 10rem;
+    border-radius: 0.2rem;
+}
+
+.gallery-container ul.mosaic-gallery li img {
+    height: 100%;
+    opacity: 0;
+}
+
+/* About Section */
+#about {
+    padding: 60px 20px;
+    background: #f4f4f4;
+    text-align: center;
+}
+
+#about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-content p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/* Services Section */
+#services {
+    padding: 60px 20px;
+    background: #fff;
+    text-align: center;
+}
+
+#services h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.services-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.service-item {
+    flex: 1 1 300px;
+    max-width: 300px;
+    margin: 15px;
+    padding: 20px;
+    background: #f4f4f4;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease-in-out;
+}
+
+.service-item:hover {
+    background: #e4e4e4;
+}
+
+.service-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.service-item p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Testimonials Section */
+#testimonials {
+    padding: 60px 20px;
+    background: #f4f4f4;
+    text-align: center;
+}
+
+#testimonials h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.testimonials-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.testimonial-item {
+    flex: 1 1 300px;
+    max-width: 300px;
+    margin: 15px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-item p {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.testimonial-item h4 {
+    font-size: 1rem;
+    color: #333;
+    text-align: right;
+}
+
+/* Contact Section */
+#contact {
+    padding: 60px 20px;
+    background: #fff;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.social-icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: white;
+    background-color: #333;
+    text-align: center;
+    line-height: 40px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.social-icon:hover {
+    background-color: #555;
+    transform: scale(1.1);
+}
+
+.fab {
+    pointer-events: none;
+}
+
+/* Footer */
+footer {
+    padding: 20px 0;
+    background: #333;
+    color: #fff;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Base styles for the navigation bar */
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: #333;
+    position: relative;
+}
+
+.navbar-toggler {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.navbar-nav {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: center; /* Centering navbar items */
+    width: 100%;
+}
+
+.navbar-nav li {
+    padding: 10px;
+}
+
+.navbar-nav li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .navbar-toggler {
+        display: block;
+    }
+
+    .navbar-nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        display: none;
+        background: #333;
+        transition: transform 0.3s ease-in-out, opacity 0.3s;
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+
+    .navbar-nav.active {
+        display: flex;
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .navbar-nav li {
+        text-align: center;
+        width: 100%;
+    }
+}
+
+/* Hover and focus effects */
+.navbar-nav li a:hover,
+.navbar-nav li a:focus {
+    background: #555;
+}
+
+.fas.fa-bars {
+    transition: transform 0.3s ease;
+}
+
+.fas.fa-bars.active {
+    transform: rotate(90deg);
+}

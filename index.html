@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>honchar.photo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="navbar-container">
+            <a href="#hero" class="logo">honchar.photo</a>
+            <button class="navbar-toggler" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="navbar-nav">
+                <li><a href="#portfolio"><b>Портфоліо</b></a></li>
+                <li><a href="#about"><b>Про мене</b></a></li>
+                <li><a href="#services"><b>Послуги</b></a></li>
+                <li><a href="#testimonials"><b>Відгуки</b></a></li>
+                <li><a href="#contact"><b>Контакти</b></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Кадри, що зберігають емоції</h1>
+            <p>honchar.photo</p>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <h2>Мої Роботи</h2>
+        <div class="wrapper">
+            <div class="gallery-container">
+                <!-- Images will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>Про Мене</h2>
+        <div class="about-content">
+            <p>
+                I'm a passionate photographer with a love for capturing moments that tell stories. My journey began
+                with a simple camera and has evolved into a profession that I deeply cherish. I specialize in [insert your specialization], and my work has been recognized by [mention any awards or recognitions].
+            </p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2>Послуги</h2>
+        <div class="services-content">
+            <div class="service-item">
+                <h3>Весільні Фотосесії</h3>
+                <p>Capturing the beautiful moments of your special day with a focus on emotion and detail.</p>
+            </div>
+            <div class="service-item">
+                <h3>Портретні Сесії</h3>
+                <p>Creating timeless portraits that reflect your personality and style.</p>
+            </div>
+            <div class="service-item">
+                <h3>Комерційне Фото</h3>
+                <p>Delivering high-quality images that showcase your brand and products effectively.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <h2>Testimonials</h2>
+        <div class="testimonials-content">
+            <div class="testimonial-item">
+                <p>"[Your Name] captured our wedding beautifully. The photos are stunning, and the experience was wonderful!"</p>
+                <h4>- Client Name</h4>
+            </div>
+            <div class="testimonial-item">
+                <p>"The portrait session was fantastic. The photos perfectly captured my personality. Highly recommend!"</p>
+                <h4>- Client Name</h4>
+            </div>
+            <!-- Add more testimonials as needed -->
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Контакти</h2>
+        <div class="contact-info">
+            <p>Пошта: your.email@example.com"</p>
+            <p>Телефон: (095) 413-7915</p>
+            <div class="social-icons">
+                <a href="https://facebook.com/yourprofile" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://instagram.com/yourprofile" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="https://telegram.me/yourprofile" class="social-icon"><i class="fab fa-telegram-plane"></i></a>
+                <a href="https://viber.com/yourprofile" class="social-icon"><i class="fab fa-viber"></i></a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Vika Honchar. All Rights Reserved.</p>
+    </footer>
+
+    <script src="scripts/portfolio.js"></script>
+    <script src="scripts/navbar.js"></script>
+    <!-- Smooth Scrolling JavaScript -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
