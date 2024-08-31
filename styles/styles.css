@@ -122,7 +122,13 @@ nav ul li a:hover {
     align-items: center;
     color: #fff;
     text-align: center;
-    
+}
+
+@media (max-width: 768px) {
+    #hero {
+        /* make text have smaller line spacing on smaller screens */
+        line-height: 1.0;
+    }
 }
 
 .hero-content h1 {
@@ -377,7 +383,7 @@ footer p {
 .navbar-nav li a {
     color: white;
     text-decoration: none;
-    padding: 10px 20px;
+    padding: 0.1vw 0.2vw;
     display: block;
 }
 
