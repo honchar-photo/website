@@ -29,23 +29,49 @@ document.addEventListener('DOMContentLoaded', function () {
 
             const gallery = document.createElement('ul');
             gallery.className = 'mosaic-gallery';
-
-            data.images.forEach(url => {
-                // convert link like 'https://drive.google.com/file/d/1Q2w3e4r5t6y7u8i9o0p/view?usp=sharing'
-                // to 'https://lh3.googleusercontent.com/d/1Q2w3e4r5t6y7u8i9o0p'
+            document.querySelector('.gallery-container').appendChild(gallery);
+            let currentIndex = 0; // to keep track of the current image index
+    
+            data.images.forEach((url, index) => {
                 url = url.replace('https://drive.google.com/file/d/', 'https://lh3.googleusercontent.com/d/').split('/view')[0];
-
+                
                 const li = document.createElement('li');
                 const img = document.createElement('img');
                 img.src = url;
-                img.alt = 'Gallery Image';
+                img.alt = `Gallery Image ${index}`;
                 img.onload = function () {
                     li.style.backgroundImage = `url(${url})`;
                     li.appendChild(img);
                 };
+                li.onclick = function() {
+                    currentIndex = index; // update current index when image is clicked
+                    updateModalImage(currentIndex);
+                    document.getElementById('myModal').style.display = "block";
+                };
                 gallery.appendChild(li);
             });
-            document.querySelector('.gallery-container').appendChild(gallery);
+    
+            function updateModalImage(index) {
+                const url = data.images[index].replace('https://drive.google.com/file/d/', 'https://lh3.googleusercontent.com/d/').split('/view')[0];
+                document.getElementById('img01').src = url;
+                document.getElementById('caption').innerHTML = `Gallery Image ${index}`;
+            }
+    
+            // Navigation Buttons
+            document.querySelector('.prev').onclick = function() {
+                currentIndex = (currentIndex > 0) ? currentIndex - 1 : data.images.length - 1;
+                updateModalImage(currentIndex);
+            };
+    
+            document.querySelector('.next').onclick = function() {
+                currentIndex = (currentIndex + 1) % data.images.length;
+                updateModalImage(currentIndex);
+            };
+    
+            // Close Modal
+            document.querySelector('.close').onclick = function() {
+                document.getElementById('myModal').style.display = "none";
+            };
         })
         .catch(error => console.error('Error loading the images:', error));
-});
+    });
