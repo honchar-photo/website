@@ -93,6 +93,10 @@ nav ul li a:hover {
     background: #555;
 }
 
+nav ul li a:active {
+    background: none;
+}
+
 /* Logo Style */
 .logo {
     color: white; /* Change the color to white or any suitable color */
@@ -502,12 +506,6 @@ footer p {
     .navbar-nav li a {
         text-align: center;
     }
-}
-
-/* Hover and focus effects */
-.navbar-nav li a:hover,
-.navbar-nav li a:focus {
-    background: #555;
 }
 
 .fas.fa-bars {
