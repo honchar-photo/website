@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -10,11 +11,22 @@
     <title>honchar.photo</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <link rel="stylesheet" href="styles/styles.css?v=1.0.5">
+    <link rel="stylesheet" href="styles/styles.css?v=2.0.2">
 </head>
+
 <body>
+    <!-- Loading Screen -->
+    <div id="loader">
+        <div class="loader-content">
+            <div class="loader-logo">honchar.photo</div>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
+        </div>
+    </div>
 
     <!-- Navigation -->
     <nav id="navbar">
@@ -28,7 +40,6 @@
                 <li><a href="#portfolio"><b>Портфоліо</b></a></li>
                 <li><a href="#about"><b>Про мене</b></a></li>
                 <li><a href="#services"><b>Послуги</b></a></li>
-                <li><a href="#testimonials"><b>Відгуки</b></a></li>
                 <li><a href="#contact"><b>Контакти</b></a></li>
             </ul>
         </div>
@@ -36,15 +47,27 @@
 
     <!-- Hero Section -->
     <section id="hero">
+        <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1>Кадри, що зберігають емоції</h1>
-            <p>honchar.photo</p>
+            <h1 class="hero-title">
+                Більше ніж фото
+                <br>
+                Кадри, що зберігають емоції
+            </h1>
+            <p class="hero-subtitle">honchar.photo</p>
+            <div class="hero-cta">
+                <a href="#portfolio" class="cta-button primary">Переглянути роботи</a>
+                <a href="#contact" class="cta-button secondary">Зв'язатися</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span></span>
         </div>
     </section>
 
     <!-- Portfolio Section -->
     <section id="portfolio">
-        <h2>Мої Роботи</h2>
+        <h2 class="section-title animate-on-scroll">Мої Роботи</h2>
         <div class="wrapper">
             <div class="gallery-container">
                 <!-- Images will be loaded here by JavaScript -->
@@ -53,85 +76,105 @@
     </section>
 
     <div id="myModal" class="modal">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="img01">
+        <button class="close" aria-label="Закрити"><i class="fas fa-times"></i></button>
+        <img class="modal-content" id="img01" alt="Full size image">
         <div id="caption"></div>
-        <a class="prev">&#10094;</a>
-        <a class="next">&#10095;</a>
+        <button class="prev" aria-label="Попереднє фото"><i class="fas fa-chevron-left"></i></button>
+        <button class="next" aria-label="Наступне фото"><i class="fas fa-chevron-right"></i></button>
     </div>
 
     <!-- About Section -->
     <section id="about">
-        <h2>Про Мене</h2>
-        <div class="about-content">
+        <h2 class="section-title animate-on-scroll">Про Мене</h2>
+        <div class="about-content animate-on-scroll">
             <p>
-                I'm a passionate photographer with a love for capturing moments that tell stories. My journey began
-                with a simple camera and has evolved into a profession that I deeply cherish. I specialize in [insert your specialization], and my work has been recognized by [mention any awards or recognitions].
+                Привіт! Я — Віка, і я вірю, що найкращі кадри — це ті, у яких ви проживаєте момент, а не думаєте, як
+                виглядаєте в об’єктиві. Моя мета — не просто зробити гарне фото, а закарбувати мить, у якій
+                відображається справжнє життя. Кожна зйомка — це історія, яку ми пишемо разом із вами. Давайте
+                збережемо ваші найцінніші миті, щоб через роки ви могли прожити їх знову.
             </p>
         </div>
     </section>
 
     <!-- Services Section -->
     <section id="services">
-        <h2>Послуги</h2>
+        <h2 class="section-title animate-on-scroll">Послуги</h2>
         <div class="services-content">
-            <div class="service-item">
-                <h3>Портретні Сесії</h3>
-                <p>Creating timeless portraits that reflect your personality and style.</p>
+            <div class="service-item animate-on-scroll">
+                <div class="service-icon">
+                    <i class="fas fa-camera-retro"></i>
+                </div>
+                <h3>Ваша історія (портретна зйомка)</h3>
+                <p>Шукаємо ваш внутрішній стан, а не ідеальну позу.</p>
             </div>
-            <div class="service-item">
-                <h3>Весільні Фотосесії</h3>
-                <p>Capturing the beautiful moments of your special day with a focus on emotion and detail.</p>
+            <div class="service-item animate-on-scroll">
+                <div class="service-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h3>Тільки удвох (love story)</h3>
+                <p>Ловимо ваші почуття та особистий всесвіт.</p>
             </div>
-            <div class="service-item">
-                <h3>Комерційне Фото</h3>
-                <p>Delivering high-quality images that showcase your brand and products effectively.</p>
+            <div class="service-item animate-on-scroll">
+                <div class="service-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3>Сімейний архів (сімейна зйомка)</h3>
+                <p>Кадри, що стануть частиною сімейної історії.</p>
             </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials">
-        <h2>Відгуки</h2>
-        <div class="testimonials-content">
-            <div class="testimonial-item">
-                <p>"[Your Name] captured our wedding beautifully. The photos are stunning, and the experience was wonderful!"</p>
-                <h4>- Client Name</h4>
+            <div class="service-item animate-on-scroll">
+                <div class="service-icon">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <h3>Історія вашої справи (комерційне фото)</h3>
+                <p>Естетика бренду та портрет експерта - живий контент для бізнесу, що захоплює з першого погляду.</p>
             </div>
-            <div class="testimonial-item">
-                <p>"The portrait session was fantastic. The photos perfectly captured my personality. Highly recommend!"</p>
-                <h4>- Client Name</h4>
-            </div>
-            <!-- Add more testimonials as needed -->
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact">
-        <h2>Контакти</h2>
-        <div class="contact-info">
-            <p>Пошта: victoria.honchar05@gmail.com</p>
-            <p>Телефон: (095) 413-7915</p>
-            <div class="social-icons">
-                <a href="https://facebook.com/yourprofile" class="social-icon" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="https://www.instagram.com/honchar.photo/" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://t.me/honchar_photo" class="social-icon" target="_blank"><i class="fab fa-telegram"></i></a>
+        <div class="contact-wrapper">
+            <h2 class="section-title animate-on-scroll">Контакти</h2>
+            <div class="contact-content animate-on-scroll">
+                <div class="contact-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Пошта</h3>
+                    <p><a href="mailto:victoria.honchar05@gmail.com">victoria.honchar05@gmail.com</a></p>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-phone"></i>
+                    <h3>Телефон</h3>
+                    <p><a href="tel:+380954137915">(095) 413-7915</a></p>
+                </div>
             </div>
+            <div class="social-icons animate-on-scroll">
+                <a href="https://facebook.com/yourprofile" class="social-icon" target="_blank"><i
+                        class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/honchar.photo/" class="social-icon" target="_blank"><i
+                        class="fab fa-instagram"></i></a>
+                <a href="https://t.me/honchar_photo" class="social-icon" target="_blank"><i
+                        class="fab fa-telegram"></i></a>
+            </div>
+            <a href="https://calendly.com/vikahonchar05/" class="cta-contact animate-on-scroll" target="_blank"
+                rel="noopener noreferrer">
+                Забронювати дату
+            </a>
         </div>
     </section>
-    
+
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Vika Honchar. All Rights Reserved.</p>
+        <p>&copy; 2026 Victoria Honchar. All Rights Reserved.</p>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
     <script src="scripts/portfolio.js"></script>
     <script src="scripts/navbar.js"></script>
+    <script src="scripts/animations.js"></script>
     <!-- Smooth Scrolling JavaScript -->
     <script>
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
@@ -145,4 +188,5 @@
     </script>
 
 </body>
+
 </html>
