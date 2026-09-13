@@ -677,10 +677,11 @@ body.scrolled .scroll-indicator {
     break-inside: avoid;
     page-break-inside: avoid;
     display: block;
-    margin-bottom: 15px;
+    margin-bottom: 16px;
     cursor: pointer;
     overflow: hidden;
     position: relative;
+    border-radius: 8px;
     background: transparent;
     list-style: none !important;
 }
@@ -711,12 +712,23 @@ body.scrolled .scroll-indicator {
     width: 100%;
     height: auto;
     object-fit: cover;
-    /* No border-radius for sharp corners */
+    border-radius: 8px;
 }
 
 @media (max-width: 1200px) {
     .gallery-container ul.mosaic-gallery {
         column-count: 4;
+        column-gap: 14px;
+    }
+
+    .gallery-container ul.mosaic-gallery li {
+        margin: 0 0 14px 0;
+    }
+}
+
+@media (max-width: 992px) {
+    .gallery-container ul.mosaic-gallery {
+        column-count: 3;
         column-gap: 12px;
     }
 
@@ -725,18 +737,41 @@ body.scrolled .scroll-indicator {
     }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 768px) {
+    .wrapper {
+        padding: 0 10px;
+    }
+
+    .wrapper .gallery-container {
+        padding: 10px;
+        margin: 1.5rem auto;
+    }
+
     .gallery-container ul.mosaic-gallery {
-        column-count: 3;
-        column-gap: 10px;
+        column-count: 2;
+        column-gap: 12px;
     }
 
     .gallery-container ul.mosaic-gallery li {
-        margin: 0 0 10px 0;
+        margin: 0 0 12px 0;
+        border-radius: 6px;
+    }
+
+    .gallery-container ul.mosaic-gallery li img {
+        border-radius: 6px;
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
+    .wrapper {
+        padding: 0 6px;
+    }
+
+    .wrapper .gallery-container {
+        padding: 8px;
+        margin: 1rem auto;
+    }
+
     .gallery-container ul.mosaic-gallery {
         column-count: 2;
         column-gap: 10px;
@@ -744,17 +779,11 @@ body.scrolled .scroll-indicator {
 
     .gallery-container ul.mosaic-gallery li {
         margin: 0 0 10px 0;
-    }
-}
-
-@media (max-width: 480px) {
-    .gallery-container ul.mosaic-gallery {
-        column-count: 1;
-        column-gap: 0;
+        border-radius: 6px;
     }
 
-    .gallery-container ul.mosaic-gallery li {
-        margin: 0 0 10px 0;
+    .gallery-container ul.mosaic-gallery li img {
+        border-radius: 6px;
     }
 }
 
@@ -762,30 +791,55 @@ body.scrolled .scroll-indicator {
 .modal {
     display: none;
     position: fixed;
-    z-index: 1000;
+    z-index: 10000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    max-height: 100vh;
+    height: 100dvh;
     overflow: hidden;
     background-color: rgba(0, 0, 0, 0.95);
-    /* Use flexbox for instant centering - no expensive transforms */
     justify-content: center;
     align-items: center;
 }
 
-/* When modal is shown, use block or flex */
-.modal[style*="block"] {
+/* When modal is shown, use flexbox with column layout */
+.modal[style*="block"],
+.modal[style*="flex"] {
     display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .modal-content {
     display: block;
     width: auto;
-    max-width: 95vw;
-    max-height: 95vh;
+    height: auto;
+    max-width: 90vw;
+    max-height: 82vh;
+    max-height: 82dvh;
     object-fit: contain;
+    margin: 0 auto;
+    border-radius: 6px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+#caption {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-align: center;
+    white-space: nowrap;
+    z-index: 1001;
+    pointer-events: none;
 }
 
 .close {
@@ -793,26 +847,26 @@ body.scrolled .scroll-indicator {
     top: 20px;
     right: 20px;
     color: #fff;
-    font-size: 24px;
+    font-size: 22px;
     cursor: pointer;
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    width: 48px;
+    height: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.25);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 2000;
     outline: none;
 }
 
 .close:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: rotate(90deg) scale(1.1);
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(90deg) scale(1.05);
 }
 
 .prev,
@@ -821,8 +875,8 @@ body.scrolled .scroll-indicator {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 60px;
-    height: 60px;
+    width: 52px;
+    height: 52px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -830,10 +884,10 @@ body.scrolled .scroll-indicator {
     font-size: 20px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     user-select: none;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.25);
     border-radius: 50%;
     z-index: 1001;
     outline: none;
@@ -849,8 +903,8 @@ body.scrolled .scroll-indicator {
 
 .prev:hover,
 .next:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: translateY(-50%) scale(1.1);
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-50%) scale(1.08);
 }
 
 .next:active,
@@ -862,17 +916,36 @@ body.scrolled .scroll-indicator {
 
     .prev,
     .next {
-        width: 45px;
-        height: 45px;
+        width: 44px;
+        height: 44px;
         font-size: 16px;
     }
 
+    .prev {
+        left: 10px;
+    }
+
+    .next {
+        right: 10px;
+    }
+
     .close {
-        width: 45px;
-        height: 45px;
+        width: 44px;
+        height: 44px;
         font-size: 18px;
         top: 15px;
         right: 15px;
+    }
+
+    .modal-content {
+        max-width: 86vw;
+        max-height: 76vh;
+        max-height: 76dvh;
+    }
+
+    #caption {
+        bottom: 18px;
+        font-size: 0.85rem;
     }
 }
 
@@ -1286,22 +1359,6 @@ footer p {
         text-align: center;
     }
 
-    .gallery-container ul.mosaic-gallery {
-        columns: 2;
-    }
-
-    .modal-content {
-        width: 100%;
-        max-height: 80vh;
-        margin: 0 auto;
-    }
-
-    .close,
-    .prev,
-    .next {
-        font-size: 32px;
-    }
-
     .cta-button {
         display: block;
         margin: 10px auto;
@@ -1316,18 +1373,6 @@ footer p {
 @media (max-width: 480px) {
     .hero-title {
         font-size: 1.5rem;
-    }
-
-    .modal-content {
-        width: 100%;
-        max-height: 75vh;
-        margin: 0 auto;
-    }
-
-    .close,
-    .prev,
-    .next {
-        font-size: 26px;
     }
 }
 

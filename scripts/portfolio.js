@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     updateModalImage(currentIndex);
                     const modal = document.getElementById('myModal');
                     if (modal) {
-                        modal.style.display = "block";
+                        modal.style.display = "flex";
                         document.body.style.overflow = 'hidden';
                     }
                 };
