@@ -278,10 +278,10 @@ nav {
 /* Hero Section */
 #hero {
     height: 100vh;
+    height: 100dvh;
     background: url('https://lh3.googleusercontent.com/d/1fmSvab9aI4oO5eLam7kRGUm-SHK4-rBi') no-repeat center center/cover;
     background-position: center 51%;
-    background-attachment: fixed;
-    /* Creates parallax effect without transform */
+    background-attachment: scroll;
     display: flex;
     background-size: cover;
     justify-content: center;
@@ -292,6 +292,20 @@ nav {
     overflow: hidden;
     transform: none !important;
     /* Prevent any transform on hero */
+}
+
+/* Enable fixed background parallax only on desktop devices with fine pointer support */
+@media (min-width: 1025px) and (hover: hover) and (pointer: fine) {
+    #hero {
+        background-attachment: fixed;
+    }
+}
+
+/* Explicit rule for iOS/iPadOS Safari (which miscalculates fixed background-size relative to entire document) */
+@supports (-webkit-touch-callout: none) {
+    #hero {
+        background-attachment: scroll !important;
+    }
 }
 
 .hero-overlay {
@@ -1229,6 +1243,7 @@ footer p {
 @media (max-width: 768px) {
     #hero {
         line-height: 1.0;
+        background-attachment: scroll !important;
     }
 
     .hero-title {
