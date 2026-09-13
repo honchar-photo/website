@@ -62,15 +62,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
             function updateModalImage(index) {
                 const modalImg = document.getElementById('img01');
-                const caption = document.getElementById('caption');
                 if (modalImg) {
                     const url = data.images[index].trim()
                         .replace('https://drive.google.com/file/d/', 'https://lh3.googleusercontent.com/d/')
                         .split('/view')[0].split('?')[0];
                     modalImg.src = url;
-                }
-                if (caption) {
-                    caption.innerHTML = `Image ${index + 1} of ${data.images.length}`;
                 }
             }
 
