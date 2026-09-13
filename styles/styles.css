@@ -1012,6 +1012,11 @@ body.scrolled .scroll-indicator {
     transition: color 0.3s ease;
 }
 
+.service-item h3 .service-type {
+    display: inline-block;
+    white-space: nowrap;
+}
+
 .service-item:hover h3 {
     color: #000;
 }
